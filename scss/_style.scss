@@ -1,9 +1,7 @@
 header {
     height: 80px;
-    background-color: cyan;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
+    background-color: $mycolor2;
+    @include goflex;
 
     .logo {
         font-size: 60px;
@@ -12,12 +10,37 @@ header {
     nav {
         width: 500px;
         ul {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
+            @include goflex;
             a {
                 font-size: 24px;
-                color: coral;
+                color: $mycolor1;
+                font-family: $myfont1;
+                text-shadow: $myshadow;
+            }
+        }
+    }
+}
+
+.s-1 {
+    background-color: lightblue;
+    height: 800px;
+    .container {
+        height: 100%;
+        @include mycontainer;
+        .card-wrapper {
+            @include goflex;
+            justify-content: space-around;
+            height: 100%;
+
+            .card {
+                @include mycard;
+                @include goflex;
+                justify-content: center;
+                align-items: flex-end;
+                padding: 20px;
+                button {
+                    @include mybutton;
+                }
             }
         }
     }
